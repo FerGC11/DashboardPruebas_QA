@@ -1,0 +1,1 @@
+estoy usando una base de datos postgresql con el nombre de bd_dashboard_QA
