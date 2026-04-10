@@ -27,10 +27,10 @@ class Pruebas(models.Model):
     CodigoPrueba = models.CharField(max_length=10)
     NombrePrueba = models.CharField(max_length=50)
     IdentificadorPrueba = models.CharField(max_length=30, null=True)
-    ComentariosPrueba = models.CharField(max_length=100)
+    ComentariosPrueba = models.CharField(max_length=100, null=True)
     FechaAlta = models.DateField()
-    FechaInicio = models.DateField()
-    FechaFin = models.DateField()
+    FechaInicio = models.DateField(null=True)
+    FechaFin = models.DateField(null=True)
     
     def __str__(self):
         return f"{self.CodigoPrueba} {self.NombrePrueba}"

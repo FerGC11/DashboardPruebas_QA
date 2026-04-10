@@ -1,1 +1,38 @@
 estoy usando una base de datos postgresql con el nombre de bd_dashboard_QA
+
+----------------------------------------------
+Script para insertar datos en los catalogos
+
+Testers:
+INSERT INTO public.usuarios_testers(
+	"NombreTester", "ApellidoPaterno", "Activo")
+	VALUES ('Marco', 'Fernandez', True),
+	('Diana', 'Cervantes', True),
+	('Lizbet', 'Gonzalez', True);
+
+EstatusPruebas
+INSERT INTO public.pruebas_estatuspruebas(
+	"NombreEstatusPrueba", "Activo")
+	VALUES ('Pendiente', True),
+	('En Proceso', True),
+	('Bloqueda', True),
+	('Liberada', True),
+	('Rechazada', True);
+
+TiposPruebas
+INSERT INTO public.pruebas_tipospruebas(
+	"NombreTipoPrueba", "Activo")
+	VALUES ('Maquinas', True),
+	('Aplicaciones', True),
+	('Web', True);
+
+
+-----------------------------------------------------
+Script para crear registros de pruebas 
+INSERT INTO public.pruebas_pruebas(
+	"CodigoPrueba", "NombrePrueba", "IdentificadorPrueba", "ComentariosPrueba", "FechaAlta", "FechaInicio", "FechaFin", "IdEstatusPrueba_id", "IdTester_id", "IdTipoPrueba_id")
+	VALUES ('C001', 'Caja Movil', 'Version 3.4.0', NULL , '2026-04-01', '2026-04-01', '2026-04-03', 5, 3, 2),
+	('C002', 'Sitio Transacciones', 'Version 1.1.0', 'Falta desplegar un servicio java' , '2026-04-01', '2026-04-02', NULL, 4, 2, 3),
+	('C003', 'Pantallas Mapeo Tabletas', 'Version 1.0.0', 'Falta mostrar mas campos en el mapeo de Terminale sy Jev' , '2026-04-01', '2026-04-03', NULL, 3, 3, 3);
+
+
